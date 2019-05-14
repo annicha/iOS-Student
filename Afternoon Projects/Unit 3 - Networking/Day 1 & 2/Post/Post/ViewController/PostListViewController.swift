@@ -42,7 +42,7 @@ class PostListViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
         let post = postController.posts[indexPath.row]
         cell.textLabel?.text = post.text
-        cell.detailTextLabel?.text = "\(post.timestamp)"
+        cell.detailTextLabel?.text = DateFormatter.localizedString(from: post.timestamp, dateStyle: .medium, timeStyle: .none)
         return cell
     }
     
